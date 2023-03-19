@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_navigation"
+    app:startDestination="@id/loginFragment">
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.example.reservaaulas.login.LoginFragment"
+        android:label="LoginFragment" >
+        <action
+            android:id="@+id/action_loginFragment_to_registerFragment"
+            app:destination="@id/registerFragment"
+            app:popUpTo="@id/registerFragment"
+            app:popUpToInclusive="true" />
+        <argument
+            android:name="registered"
+            app:argType="string"
+            android:defaultValue="null" />
+        <action
+            android:id="@+id/action_loginFragment_to_adminFragment"
+            app:destination="@id/adminFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_userFragment"
+            app:destination="@id/userFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/registerFragment"
+        android:name="com.example.reservaaulas.register.RegisterFragment"
+        android:label="RegisterFragment" >
+        <action
+            android:id="@+id/action_registerFragment_to_loginFragment"
+            app:destination="@id/loginFragment"
+            app:popUpTo="@id/loginFragment"
+            app:popUpToInclusive="true" >
+            <argument
+                android:name="registered" />
+        </action>
+    </fragment>
+    <fragment
+        android:id="@+id/adminFragment"
+        android:name="com.example.reservaaulas.admin.AdminFragment"
+        android:label="AdminFragment" >
+        <argument android:name="adminEmail"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_adminFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+        <action
+            android:id="@+id/action_adminFragment_to_addRoomFragment"
+            app:destination="@id/addRoomFragment" />
+        <action
+            android:id="@+id/action_adminFragment_to_deleteRoomFragment"
+            app:destination="@id/deleteRoomFragment" />
+        <action
+            android:id="@+id/action_adminFragment_to_editRoomFragment"
+            app:destination="@id/editRoomFragment" />
+        <argument
+            android:name="userName"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/addRoomFragment"
+        android:name="com.example.reservaaulas.addRoom.AddRoomFragment"
+        android:label="AddRoomFragment" >
+        <argument
+            android:name="AdminEmail"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_addRoomFragment_to_adminFragment"
+            app:destination="@id/adminFragment" />
+        <argument
+            android:name="userName"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/deleteRoomFragment"
+        android:name="com.example.reservaaulas.deleteRoom.DeleteRoomFragment"
+        android:label="DeleteRoomFragment" >
+        <argument
+            android:name="adminEmail"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_deleteRoomFragment_to_adminFragment"
+            app:destination="@id/adminFragment" />
+        <argument
+            android:name="userName"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/editRoomFragment"
+        android:name="com.example.reservaaulas.editRoom.EditRoomFragment"
+        android:label="EditRoomFragment" >
+        <argument
+            android:name="adminEmail"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_editRoomFragment_to_adminFragment"
+            app:destination="@id/adminFragment" />
+        <action
+            android:id="@+id/action_editRoomFragment_to_roomToEditFragment"
+            app:destination="@id/roomToEditFragment" />
+        <argument
+            android:name="userName"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/roomToEditFragment"
+        android:name="com.example.reservaaulas.roomToEdit.RoomToEditFragment"
+        android:label="RoomToEditFragment" >
+        <argument android:name="adminEmail" />
+        <action
+            android:id="@+id/action_roomToEditFragment_to_editRoomFragment"
+            app:destination="@id/editRoomFragment" />
+        <argument android:name="roomToEdit" />
+        <argument android:name="userName" />
+    </fragment>
+    <fragment
+        android:id="@+id/userFragment"
+        android:name="com.example.reservaaulas.user.UserFragment"
+        android:label="UserFragment" >
+        <argument android:name="userEmail" />
+        <action
+            android:id="@+id/action_userFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+        <action
+            android:id="@+id/action_userFragment_to_reserveRoomFragment"
+            app:destination="@id/reserveRoomFragment" />
+        <argument
+            android:name="userName"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/myReservesFragment"
+        android:name="com.example.reservaaulas.myReserves.MyReservesFragment"
+        android:label="MyReservesFragment" />
+    <fragment
+        android:id="@+id/searchRoomsFragment"
+        android:name="com.example.reservaaulas.searchRooms.SearchRoomsFragment"
+        android:label="SearchRoomsFragment" />
+    <fragment
+        android:id="@+id/reserveRoomFragment"
+        android:name="com.example.reservaaulas.reserveRoom.ReserveRoomFragment"
+        android:label="ReserveRoomFragment" >
+        <argument
+            android:name="userEmail"
+            app:argType="string" />
+        <argument
+            android:name="doorRoom"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_reserveRoomFragment_to_userFragment"
+            app:destination="@id/userFragment" />
+        <argument
+            android:name="userName"
+            app:argType="string" />
+    </fragment>
+</navigation>

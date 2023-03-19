@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="viewModel"
+            type="com.example.reservaaulas.searchRooms.SearchRoomsViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="409dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="1dp"
+            android:layout_marginTop="1dp"
+            android:layout_marginEnd="1dp"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginLeft="60dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Door:"
+                    android:textColor="@color/black"
+                    android:textSize="20dp"
+                    android:layout_marginRight="45dp" />
+                <Spinner
+                    android:id="@+id/doorSpinner"
+                    android:layout_width="200dp"
+                    android:layout_height="40dp"
+                    tools:ignore="SpeakableTextPresentCheck"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginLeft="60dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Modality:"
+                    android:textColor="@color/black"
+                    android:textSize="20dp"
+                    android:layout_marginRight="11dp" />
+                <Spinner
+                    android:id="@+id/modalitySpinner"
+                    android:layout_width="200dp"
+                    android:layout_height="40dp"
+                    tools:ignore="SpeakableTextPresentCheck"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginLeft="60dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Nº Seats:"
+                    android:textColor="@color/black"
+                    android:textSize="20dp"
+                    android:layout_marginRight="9dp" />
+                <Spinner
+                    android:id="@+id/nSeatsSpinner"
+                    android:layout_width="200dp"
+                    android:layout_height="40dp"
+                    tools:ignore="SpeakableTextPresentCheck"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="10dp">
+
+                <Button
+                    android:id="@+id/filterButton"
+                    android:layout_width="295dp"
+                    android:layout_height="50dp"
+                    android:layout_marginLeft="50dp"
+                    android:text="Filter"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/searchRoomRecycleview"
+                    android:layout_width="match_parent"
+                    android:layout_height="470dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginEnd="1dp"
+                    android:background="@color/orange"
+                    tools:listitem="@layout/search_item" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

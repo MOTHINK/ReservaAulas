@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "613545837740",
+    "project_id": "reservaaulas-9c268",
+    "firebase_url": "https://reservaaulas-9c268-default-rtdb.europe-west1.firebasedatabase.app/",
+    "storage_bucket": "reservaaulas-9c268.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:613545837740:android:38fec093a9ad42dae78b09",
+        "android_client_info": {
+          "package_name": "com.example.reservaaulas"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "613545837740-2snm9lgqbt624nm02ujht3ui7qd0tk10.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCYuXyKWMNSN40JAv65LMnGvUTfdUb88vs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "613545837740-2snm9lgqbt624nm02ujht3ui7qd0tk10.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
